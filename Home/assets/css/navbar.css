@@ -1,0 +1,142 @@
+@font-face {
+    font-family: coves;
+    src: url(../Assets/coves_bold.otf);
+}
+
+:root {
+    --text-blue-1: #9EE1DC;
+    --text-blue-2: #90e0ef;
+    --text-blue-3: #caf0f8;
+
+    --bg-d-blue-1: #06043d;
+    --bg-d-blue-2: #03045e;
+    --bg-d-blue-3: #0d1636;
+
+    --bg-cyan-1: #0e6ba8;
+}
+
+/* 
+#caf0f8
+#90e0ef
+#0e6ba8
+#0a2472
+#001c55
+#03045e
+#00072d 
+#06043d
+#9EE1DC
+*/
+header {
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: none;
+    padding: 0 0 10px;
+    backdrop-filter: blur(5px);
+}
+
+.navbar::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    /* background-color: var(--text-blue-3); */
+    height: 2px;
+    box-sizing: border-box;
+    width: 500px;
+}
+
+.navbar a {
+    color: var(--text-blue-2);
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: inline-block;
+    padding: 15px 20px 5px;
+    position: relative;
+}
+
+.navbar a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: var(--text-blue-1);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.navbar a:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+.navbar>ul {
+    width: 500px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-bottom: solid var(--text-blue-2) 2px; */
+}
+
+.navbar>ul li {
+    display: inline-block;
+    margin: auto auto;
+}
+
+.hamburger-menu {
+    display: none;
+    position: fixed;
+    left: 30px;
+    top: 30px;
+    color: var(--text-blue-2);
+    font-size: 1.5rem;
+    z-index: 20;
+}
+
+.navbar.active {
+    margin: 100px 50px;
+    backdrop-filter: blur(5px);
+    border-radius: 10%;
+    border: 4px var(--text-blue-2);
+}
+
+@media(max-width: 767px) {
+    .navbar {
+        display: none;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        height: 50vh;
+        width: 70vw;
+    }
+
+    header {
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .navbar>ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
