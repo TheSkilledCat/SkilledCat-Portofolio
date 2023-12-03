@@ -22,6 +22,7 @@
 #06043d
 #9EE1DC
 */
+
 @font-face {
   font-family: coves;
   src: url(../../../Assets/coves_bold.otf);
@@ -138,7 +139,9 @@ main {}
   font-size: 1.3rem;
   display: block;
   padding: 8px 0;
+  z-index: 5;
 }
+
 .skill-item:hover {
   box-shadow: 2px 2px 5px 4px var(--text-blue-2);
 }
@@ -230,10 +233,20 @@ footer {
     width: 50%;
     margin-bottom: 30px;
   }
+
+  .services>.container {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 100px;
+    padding: 50px 0 100px;
+  }
 }
 
 @media(max-width: 574px) {
   .footer-col {
     width: 100%;
+  }
+
+  .services>.container {
+    grid-template-columns: repeat(1, 1fr);
   }
 }

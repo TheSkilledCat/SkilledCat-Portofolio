@@ -1,8 +1,3 @@
-@font-face {
-    font-family: coves;
-    src: url(../Assets/coves_bold.otf);
-}
-
 :root {
     --text-blue-1: #9EE1DC;
     --text-blue-2: #90e0ef;
@@ -26,6 +21,12 @@
 #06043d
 #9EE1DC
 */
+
+@font-face {
+    font-family: coves;
+    src: url(../Assets/coves_bold.otf);
+}
+
 header {
     height: 70px;
     position: fixed;
@@ -127,8 +128,7 @@ header {
         width: 70vw;
     }
 
-    header {
-    }
+    header {}
 
     .hamburger-menu {
         display: block;
