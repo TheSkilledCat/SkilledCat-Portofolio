@@ -45,8 +45,6 @@ body {
   background-color: var(--bg-d-blue-1);
 }
 
-main {}
-
 .about-me {
   min-height: 500px;
   display: flex;
@@ -63,7 +61,6 @@ main {}
   height: 100%;
   max-width: 100%;
   background-color: var(--bg-d-blue-1);
-
 }
 
 .about-me img {
