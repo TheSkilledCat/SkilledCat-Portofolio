@@ -48,42 +48,36 @@ body {
 main {}
 
 .about-me {
+  min-height: 500px;
   display: flex;
   justify-content: center;
-  height: 500px;
-  padding: 100px;
 }
 
 .about-me>div {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  background-color: var(--bg-d-blue-1);
+  padding: 100px auto;
   height: 100%;
-  margin: 50px;
+  max-width: 100%;
+  background-color: var(--bg-d-blue-1);
+
+}
+
+.about-me img {
+  height: 350px;
+  flex: 2;
 }
 
 .about-me h2 {
   color: var(--text-blue-1);
   font-size: 1.8rem;
-  margin: auto 0;
-  height: 100%;
-  margin: 0 20px;
-  flex: 2;
-  padding: 80px;
-
+  flex: 3;
+  margin: 0 100px 0;
 }
 
-.about-me>div {
-  margin: auto 0;
-}
-
-.about-me img {
-  height: 100%;
-  flex: 1;
-}
 
 .career {
   min-height: 800px;
@@ -238,6 +232,15 @@ footer {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 100px;
     padding: 50px 0 100px;
+  }
+
+  .about-me>div {
+    flex-direction: column;
+  }
+
+  .about-me h2 {
+    margin: 80px 50px;
+    text-align: center;
   }
 }
 

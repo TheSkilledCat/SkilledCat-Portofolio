@@ -24,7 +24,7 @@
 
 @font-face {
     font-family: coves;
-    src: url(../Assets/coves_bold.otf);
+    src: url(../../../Assets/coves_bold.otf);
 }
 
 header {
@@ -47,17 +47,17 @@ header {
     backdrop-filter: blur(5px);
 }
 
-.navbar::before {
+/* .navbar::before {
     content: '';
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     bottom: 0;
-    /* background-color: var(--text-blue-3); */
+    background-color: var(--text-blue-3);
     height: 2px;
     box-sizing: border-box;
     width: 500px;
-}
+} */
 
 .navbar a {
     color: var(--text-blue-2);
@@ -92,7 +92,6 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border-bottom: solid var(--text-blue-2) 2px; */
 }
 
 .navbar>ul li {
@@ -100,43 +99,59 @@ header {
     margin: auto auto;
 }
 
-.hamburger-menu {
-    display: none;
+#nav-toggle {
     position: fixed;
+    display: none;
+    height: 1.4em;
+    width: 1.4em;
     left: 30px;
     top: 30px;
     color: var(--text-blue-2);
     font-size: 1.5rem;
     z-index: 20;
+    transition: 0.3s ease-in-out;
+    border-radius: 50%;
 }
 
-.navbar.active {
-    margin: 100px 50px;
-    backdrop-filter: blur(5px);
-    border-radius: 10%;
-    border: 4px var(--text-blue-2);
+#nav-toggle i {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
+
+#nav-toggle.active {
+    left: 50%;
+    transform: translate(-50%);
+    background-color: var(--text-blue-2);
+    color: var(--bg-d-blue-3);
+}
+
+#nav-toggle:hover {
+    background-color: var(--text-blue-2);
+    color: var(--bg-d-blue-3);
+}
+
 
 @media(max-width: 767px) {
-    .navbar {
+    #navbar {
         display: none;
+        justify-content: center;
+        align-items: center;
         position: fixed;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        height: 50vh;
-        width: 70vw;
-    }
-
-    header {}
-
-    .hamburger-menu {
-        display: block;
+        height: 100vh;
+        width: 100vw;
+        backdrop-filter: brightness(60%) blur(5px);
     }
 
     .navbar>ul {
+        height: 40vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+
+    #nav-toggle {
+        display: block;
     }
 }

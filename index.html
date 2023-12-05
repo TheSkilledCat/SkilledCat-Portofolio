@@ -5,16 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/home.css">
-    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="Home/assets/css/home.css">
+    <link rel="stylesheet" href="Home/assets/css/navbar.css">
     <script src="https://kit.fontawesome.com/0f24a9bbc1.js" crossorigin="anonymous"></script>
     <title>SkilledCat</title>
 </head>
 
 <body>
     <header>
-        <div class="hamburger-menu"><i class="fa-solid fa-bars"></i></div>
-        <nav class="navbar">
+        <div id="nav-toggle" onclick="toggle_nav()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <nav class="navbar" id="navbar">
             <ul class="me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -37,32 +39,29 @@
     <main>
         <section class="about-me">
             <div>
-                <img src="assets/images/profile-nobackground.png" alt="" height="350px">
+                <img src="Home/assets/images/profile-nobackground.png" alt="SkilledCat's Logo">
                 <h2>
                     Bro I'm still working on this thing
                 </h2>
-            </div>
-            <div class="career">
-
             </div>
         </section>
         <section class="projects"></section>
         <section class="services">
             <div class="container">
                 <div class="skill-item">
-                    <img src="assets/images/icons8-code-100.png" alt="">
+                    <img src="Home/assets/images/icons8-code-100.png" alt="">
                     <p>Web Design</p>
                 </div>
                 <div class="skill-item">
-                    <img src="assets/images/icons8-code-100.png" alt="">
+                    <img src="Home/assets/images/icons8-code-100.png" alt="">
                     <p>Programming</p>
                 </div>
                 <div class="skill-item">
-                    <img src="assets/images/icons8-video-trimming-100.png" alt="">
+                    <img src="Home/assets/images/icons8-video-trimming-100.png" alt="">
                     <p>Video Editing</p>
                 </div>
                 <div class="skill-item">
-                    <img src="assets/images/icons8-code-100.png" alt="">
+                    <img src="Home/assets/images/icons8-code-100.png" alt="">
                     <p>Graphical Design</p>
                 </div>
             </div>
@@ -102,7 +101,8 @@
                     <div class="social-links">
                         <a href="https://github.com/TheSkilledCat"><i class="fab fa-github"></i></a>
                         <a href="https://discord.gg/cZ5bqwyk3J"><i class="fab fa-discord"></i></a>
-                        <a href="https://instagram.com/skilledcat_?igshid=MmVlMjlkMTBhMg=="><i class="fab fa-instagram"></i></a>
+                        <a href="https://instagram.com/skilledcat_?igshid=MmVlMjlkMTBhMg=="><i
+                                class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
@@ -110,5 +110,6 @@
         </div>
     </footer>
 </body>
+<script src="Home/assets/js/navbar.js"></script>
 
 </html>
