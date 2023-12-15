@@ -27,6 +27,11 @@
     src: url(../../../Assets/fonts/coves_bold.otf);
 }
 
+@font-face {
+    font-family: oneday;
+    src: url(../../../Assets/fonts/oneday.ttf);
+}
+
 header {
     height: 70px;
     position: fixed;
@@ -44,8 +49,8 @@ header {
     width: 100%;
     background: none;
     padding: 0 0 10px;
-    backdrop-filter: blur(5px);
-    transition: 1s;
+    backdrop-filter: blur(20px);
+    transition: 0.5s;
 }
 
 .navbar.active {
@@ -55,8 +60,8 @@ header {
     position: fixed;
     height: 100vh;
     width: 100vw;
-    backdrop-filter: brightness(60%) blur(5px);
-    transition: 1s;
+    backdrop-filter: brightness(60%) blur(20px);
+    transition: 0.5s;
     opacity: 100%;
 }
 
@@ -75,7 +80,7 @@ header {
 .navbar a {
     color: var(--text-blue-2);
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     display: inline-block;
     padding: 15px 20px 5px;
     position: relative;
@@ -99,7 +104,7 @@ header {
     left: 0;
 }
 
-.navbar>ul {
+.navbar > ul {
     width: 500px;
     height: 100%;
     display: flex;
@@ -107,7 +112,7 @@ header {
     align-items: center;
 }
 
-.navbar>ul li {
+.navbar > ul li {
     display: inline-block;
     margin: auto auto;
 }
@@ -115,44 +120,129 @@ header {
 #nav-toggle {
     position: fixed;
     display: none;
-    height: 1.4em;
-    width: 1.4em;
-    left: 30px;
-    top: 30px;
-    color: var(--text-blue-2);
-    font-size: 1.5rem;
+    height: 1.8em;
+    width: 1.8em;
+    left: 40px;
+    top: 50px;
     z-index: 20;
     transition: 0.3s ease-in-out;
     border-radius: 50%;
-}
-
-#nav-toggle i {
-    position: relative;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    cursor: pointer;
 }
 
 #nav-toggle.active {
     left: 50%;
     transform: translate(-50%);
-    background-color: var(--text-blue-2);
-    color: var(--bg-d-blue-3);
 }
 
-#nav-toggle:hover {
-    background-color: var(--text-blue-2);
-    color: var(--bg-d-blue-3);
+.hamburger {
+    display: inline-block;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
 }
 
+.hamburger:hover {
+    opacity: 0.5;
+}
+
+.hamburger.is-active:hover {
+    opacity: 0.5;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+    background-color: var(--text-blue-2);
+}
+
+.hamburger-box {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    position: relative;
+}
+
+.hamburger-inner {
+    display: block;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+    width: 1.5em;
+    height: 0.2em;
+    background-color: var(--text-blue-2);
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+    content: "";
+    display: block;
+}
+
+.hamburger-inner::before {
+    top: -10px;
+}
+
+.hamburger-inner::after {
+    bottom: -10px;
+}
+
+/* Spring  Animation */
+.hamburger--spring .hamburger-inner {
+    transition: background-color 0s 0.13s linear;
+}
+
+.hamburger--spring .hamburger-inner::before {
+    top: 7px;
+    transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spring .hamburger-inner::after {
+    top: 14px;
+    transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spring.is-active .hamburger-inner {
+    transition-delay: 0.22s;
+    background-color: transparent !important;
+}
+
+.hamburger--spring.is-active .hamburger-inner::before {
+    top: 0;
+    transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+
+.hamburger--spring.is-active .hamburger-inner::after {
+    top: 0;
+    transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 10px, 0) rotate(-45deg);
+}
+
+
+/* RESPONSIVE NAVBAR */
 
 @media(max-width: 767px) {
     .navbar {
-        /* display: none; */
         opacity: 0;
     }
 
-    .navbar>ul {
+    .navbar > ul {
         height: 40vh;
         display: flex;
         flex-direction: column;
