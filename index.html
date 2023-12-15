@@ -2,22 +2,38 @@
 <html lang="en">
 
 <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Website Customization -->
     <meta name="theme-color" content="#0e6ba8" />
+    <link rel="icon" type="image/x-icon" href="Assets/icons/round_icon.ico">
+    <title>SkilledCat's Portofolio</title>
+
+    <!-- CSS Files -->
     <link rel="stylesheet" href="Home/assets/css/home.css">
     <link rel="stylesheet" href="Home/assets/css/navbar.css">
+
+    <!-- CSS Libraries -->
+
+    <!-- JavaScript Files -->
+    <script src="Home/assets/js/home.js" defer></script>
+    <script src="Home/assets/js/navbar.js" defer></script>
+
+    <!-- Kits and Libraries -->
     <script src="https://kit.fontawesome.com/0f24a9bbc1.js" crossorigin="anonymous"></script>
-    <link rel="icon" type="image/x-icon" href="Assets/icons/round_icon.ico">
-    <title>SkilledCat</title>
+
 </head>
 
 <body>
     <header>
-        <div id="nav-toggle" onclick="toggle_nav()">
-            <i class="fa-solid fa-bars"></i>
-        </div>
+        <button id="nav-toggle" class="hamburger hamburger--spring" type="button" onclick="toggle_nav()">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
         <nav class="navbar" id="navbar">
             <ul class="me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
@@ -41,15 +57,20 @@
     <main>
         <section class="about-me">
             <div>
-                <img src="Home/assets/images/profile-nobackground.png" alt="SkilledCat's Logo" height="350px"
-                    width="350px">
-                <h2>
-                    Bro I'm still working on this thing
-                </h2>
+                <div class="about-me-image">
+                    <img src="Home/assets/images/profile-nobackground.png" alt="SkilledCat's Logo" height="350px"
+                        width="350px">
+                </div>
+                <div class="about-me-text">
+                    <p id="about-me-text">
+                        Bro I'm still working on this thing
+                    </p>
+                </div>
             </div>
         </section>
         <section class="projects"></section>
         <section class="services">
+            <p class="title">I can provide you these services</p>
             <div class="container">
                 <div class="skill-item">
                     <img src="Home/assets/images/icons8-code-100.png" alt="">
@@ -77,7 +98,7 @@
                     <h4>copyright</h4>
                     <p>This website has been designed by me from scratch.</p>
                     <br>
-                    <p>@ 2023 SkilledCat </p>
+                    <p>&copy; 2023 SkilledCat</p>
                 </div>
                 <div class="footer-col">
                     <h4>navigate</h4>
@@ -110,6 +131,5 @@
         </div>
     </footer>
 </body>
-<script src="Home/assets/js/navbar.js"></script>
 
 </html>
