@@ -47,6 +47,17 @@ body {
   background-color: var(--bg-d-blue-1);
 }
 
+.image-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+
 .about-me {
   min-height: 500px;
   padding-top: 100px;
@@ -84,19 +95,37 @@ body {
   letter-spacing: 0.02;
 }
 
+
+
+
+
+
+
+
 .career {
   min-height: 800px;
   border: #0d0c1f;
 }
+
+
+
+
+
+
+
+
 
 .projects {
   min-height: 500px;
   border: #0d0c1f 1px;
 }
 
-.services-svg {
-  margin: 0;
-}
+
+
+
+
+
+
 
 .services {
   background: rgb(26, 41, 97);
@@ -112,6 +141,38 @@ body {
   width: 100%;
   text-align: center;
   padding: 30px 100px 0;
+  position: relative;
+  user-select: none;
+}
+
+/* .services .title::before,
+.services .title::after {
+  position: relative;
+
+  content: "";
+  display: block;
+
+  
+} */
+.services .title::before,
+.services .title::after {
+  content: "";
+  display: block;
+  background-color: var(--text-blue-2);
+  height: 0.06em;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.services .title::before {
+  width: 6em;
+  margin-top: 1.4em;
+}
+
+.services .title::after {
+  width: 5em;
+  margin-top: 0.6em;
 }
 
 .services > .container {
@@ -122,6 +183,12 @@ body {
   grid-template-columns: repeat(4, 1fr);
 }
 
+.services > .container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .skill-item {
   display: block, flex;
   flex-direction: column;
@@ -129,21 +196,30 @@ body {
   height: 150px;
   width: 150px;
   border-radius: 50%;
-  background: rgb(26, 41, 97);
-  background: linear-gradient(300deg, rgba(26, 41, 97, 1) 0%, rgba(14, 107, 168, 1) 100%);
-  margin: auto;
+  border: 2px solid var(--text-blue-2);
   color: var(--text-blue-3);
   text-align: center;
-  padding-top: 30px;
   cursor: pointer;
-  transition: 0.5s ease;
-  border: 2px solid var(--text-blue-2);
+  transition: all .4s ease-in-out;
+  background-size: 200% 100%;
+  background-image: radial-gradient(circle, rgb(26, 123, 188) 0%, rgba(24, 53, 110, 1) 100%);
+
 }
 
-.skill-item:hover {
-  /* box-shadow: 2px 2px 5px 4px var(--text-blue-2); */
-  background: rgb(11, 19, 51);
-  background: linear-gradient(300deg, rgba(11, 19, 51, 1) 0%, rgba(24, 53, 110, 1) 59%, rgba(14, 107, 168, 1) 100%);
+.skill-holder:hover .skill-item {
+  background-position: 75% 0;
+  transition: all .4s ease-in-out;
+
+  /* background-position: 100% 0; */
+  /* background: rgb(11, 19, 51); */
+  /* background-image: linear-gradient(300deg, rgba(11, 19, 51, 1) 0%, rgba(24, 53, 110, 1) 59%, rgba(14, 107, 168, 1) 100%); */
+  /* background: rgb(26, 41, 97); */
+  /* background: linear-gradient(300deg, rgba(26, 41, 97, 1) 0%, rgba(14, 107, 168, 1) 100%); */
+}
+
+.skill-item .image-holder {
+  width: 100%;
+  height: 100%;
 }
 
 .skill-item img {
@@ -152,12 +228,44 @@ body {
 }
 
 .skill-item p {
-  margin-top: 30px;
+  margin-top: 20px;
   font-size: 1.3rem;
   display: block;
   padding: 8px 0;
   z-index: 5;
+  position: relative;
+  transition: all 0.3s ease 0s, left 0.3s ease 0s;
+  text-wrap: nowrap;
+  text-align: center;
 }
+
+.skill-item p:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: var(--text-blue-1);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.skill-holder:hover p {
+  letter-spacing: 0.08rem;
+}
+
+.skill-holder:hover p:after {
+  width: 100%;
+  left: 0;
+}
+
+
+
+
+
+
 
 
 /* Footer */
@@ -190,6 +298,7 @@ footer {
   margin-bottom: 35px;
   font-weight: 500;
   position: relative;
+  user-select: none;
 }
 
 .footer-col h4::before {
@@ -254,6 +363,21 @@ footer {
   background-color: var(--text-blue-3);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*responsive*/
 @media(max-width: 978px) {
   .footer-col {
@@ -263,6 +387,7 @@ footer {
   .footer .row {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .services > .container {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 100px;
