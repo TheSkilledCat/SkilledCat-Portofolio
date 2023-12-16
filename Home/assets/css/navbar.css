@@ -63,6 +63,7 @@ header {
     backdrop-filter: brightness(60%) blur(20px);
     transition: 0.5s;
     opacity: 100%;
+    visibility: visible;
 }
 
 /* .navbar::before {
@@ -162,6 +163,8 @@ header {
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
     background-color: var(--text-blue-2);
+    width: 1.7em;
+    height: 0.2em;
 }
 
 .hamburger-box {
@@ -236,10 +239,18 @@ header {
 
 
 /* RESPONSIVE NAVBAR */
+@media(min-width: 978px) {}
 
 @media(max-width: 767px) {
+    header {
+        height: 0;
+    }
+
     .navbar {
         opacity: 0;
+        visibility: hidden;
+        height: 100vh;
+        width: 100vw;
     }
 
     .navbar > ul {
